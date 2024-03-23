@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTabs.Views.SpSitPage"
+             Title="SpSitPage"             
+             xmlns:dt="clr-namespace:MauiTabs"
+             x:DataType="dt:MainPageViewModel">
+    <!--<StackLayout x:Name="SpSitView">-->
+    <VerticalStackLayout>
+        <Label FontSize="Large"
+               TextColor="Black"
+               FontAttributes="Bold"
+            Text="SpSitPage"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+    <!--</StackLayout>-->
+</ContentPage>

@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-	x:Class="MauiTabs.MainPage"
-	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:dt="clr-namespace:MauiTabs">
+    x:Class="MauiTabs.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dt="clr-namespace:MauiTabs">
 
-	<ScrollView>
-		<VerticalStackLayout>
-			<FlexLayout 
+    <ScrollView>
+        <VerticalStackLayout>
+            <FlexLayout 
                 BindableLayout.ItemsSource="{Binding MenuItems}"
-				JustifyContent="SpaceAround"
+                JustifyContent="SpaceAround"
                 Direction="Row"
                 Wrap="NoWrap"
-				RadioButtonGroup.GroupName="MenuCategories" 
-				RadioButtonGroup.SelectedValue="{Binding Selected}">
-				<BindableLayout.ItemTemplate>
-					<DataTemplate x:DataType="dt:MenuItem">
-						<RadioButton
-							x:Name="radio"
-							Content="{Binding Text}"
-							GroupName="MenuCategories"
-							Value="{Binding Value}">
+                RadioButtonGroup.GroupName="MenuCategories" 
+                RadioButtonGroup.SelectedValue="{Binding Selected}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="dt:MenuItem">
+                        <RadioButton
+                            x:Name="radio"
+                            Content="{Binding Text}"
+                            GroupName="MenuCategories"
+                            Value="{Binding  }">
 							<RadioButton.ControlTemplate>
 								<ControlTemplate>
 									<Grid RowDefinitions="30,4">
@@ -52,14 +52,12 @@
 								</ControlTemplate>
 							</RadioButton.ControlTemplate>
 						</RadioButton>
-					</DataTemplate>
-				</BindableLayout.ItemTemplate>
-			</FlexLayout>
-			<HorizontalStackLayout>
-				<Label Text="Your selection:" />
-				<Label x:Name="labelSelection" Text="{Binding Selected}" />
-			</HorizontalStackLayout>
-		</VerticalStackLayout>
-	</ScrollView>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+            <ContentPresenter Content="{Binding Selected.Value}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>

@@ -5,7 +5,10 @@
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new MainPageViewModel();
+            var viewModel = new MainPageViewModel();
+            viewModel.Selected = viewModel.MenuItems.FirstOrDefault(m => m.Text == "Detail");
+            //BindingContext = new MainPageViewModel();
+            BindingContext = viewModel;
         }
     }
 }
