@@ -20,7 +20,7 @@
 							x:Name="radio"
 							Content="{Binding Text}"
 							GroupName="MenuCategories"
-							Value="{Binding Value}">
+							Value="{Binding }">
 							<RadioButton.ControlTemplate>
 								<ControlTemplate>
 									<Grid RowDefinitions="30,4">
@@ -55,11 +55,8 @@
 					</DataTemplate>
 				</BindableLayout.ItemTemplate>
 			</FlexLayout>
-			<HorizontalStackLayout>
-				<Label Text="Your selection:" />
-				<Label x:Name="labelSelection" Text="{Binding Selected}" />
-			</HorizontalStackLayout>
-		</VerticalStackLayout>
+            <ContentView Content="{Binding SelectedPageContent}" />
+        </VerticalStackLayout>
 	</ScrollView>
 
 </ContentPage>
