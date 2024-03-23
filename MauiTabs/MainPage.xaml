@@ -7,14 +7,17 @@
 
 	<ScrollView>
 		<VerticalStackLayout>
-			<HorizontalStackLayout BindableLayout.ItemsSource="{Binding MenuItems}"
-								   RadioButtonGroup.GroupName="MenuCategories" 
-								   RadioButtonGroup.SelectedValue="{Binding Selected}">
+			<FlexLayout 
+                BindableLayout.ItemsSource="{Binding MenuItems}"
+				JustifyContent="SpaceAround"
+                Direction="Row"
+                Wrap="NoWrap"
+				RadioButtonGroup.GroupName="MenuCategories" 
+				RadioButtonGroup.SelectedValue="{Binding Selected}">
 				<BindableLayout.ItemTemplate>
 					<DataTemplate x:DataType="dt:MenuItem">
 						<RadioButton
 							x:Name="radio"
-							Margin="0,0,15,0"
 							Content="{Binding Text}"
 							GroupName="MenuCategories"
 							Value="{Binding Value}">
@@ -51,7 +54,7 @@
 						</RadioButton>
 					</DataTemplate>
 				</BindableLayout.ItemTemplate>
-			</HorizontalStackLayout>
+			</FlexLayout>
 			<HorizontalStackLayout>
 				<Label Text="Your selection:" />
 				<Label x:Name="labelSelection" Text="{Binding Selected}" />
